@@ -1,5 +1,5 @@
 import s from './game.scss';
-import { htmlFactory } from '@eightfeet/walle';
+import { htmlFactory } from '@byhealth/walle';
 const { inlineStyle } = htmlFactory;
 
 
@@ -50,10 +50,10 @@ export function renderGame(style, prizes) {
 		const element = prizes[index];
 		const deg = index * eachDeg;
 		dom += `<div class="${s.award}" 
-		style="${inlineStyle({transform: `rotate(${deg + eachDeg/2}deg)`})}">
+		style="transform:rotate(${deg + eachDeg/2}deg); -webkit-transform:rotate(${deg + eachDeg/2}deg)">
 			<div class="${s.prizealias}" ${prizeAliasStyle && `style="${prizeAliasStyle}"`}>${element.prizeAlias}</div>
 			<img class="${s.gameimg}" ${gameImgStyle && `style="${gameImgStyle}"`} src="${element.gameImg}" />
-		</div><div class="${s.divide}"  style="${inlineStyle({transform: `rotate(${deg}deg)`})} ${divideStyle ? divideStyle : ''}"></div>`;
+		</div><div class="${s.divide}"  style="transform:rotate(${deg}deg); -webkit-transform:rotate(${deg}deg); ${divideStyle ? divideStyle : ''}"></div>`;
 	}
 	
 	return `${modify.length > 0 ? `<div class="${s.modifywrap}">${renderModify(modify)}</div>` : ''} 
