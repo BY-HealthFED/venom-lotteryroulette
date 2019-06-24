@@ -1,4 +1,4 @@
-## lotteryflip
+## lotteryroulette
 
 转盘抽奖 
 [demo](https://by-healthfed.github.io/venom-lotteryroulette/dist)
